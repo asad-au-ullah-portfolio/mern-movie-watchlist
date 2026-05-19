@@ -30,6 +30,9 @@ app.use(async (req, res, next) => {
 });
 
 // Routes
+app.get('/', (req, res) => {
+    res.send('API is running.');
+});
 app.use('/api/movies', movieRoutes);
 app.use('/api/upload', uploadRoutes);
 
