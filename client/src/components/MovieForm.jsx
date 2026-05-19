@@ -72,7 +72,7 @@ function MovieForm({ onAdd, onClose }) {
                     <input name="rating" type="number" min="1" max="10"
                         value={formData.rating} onChange={handleChange} placeholder="Rating 1-10" />
 
-          // Poster Upload Input
+          {/* Poster Upload Input */}
                     <div className="upload-area">
                         <label>🖼️ Movie Poster (uploaded to Cloudinary)</label>
                         <input type="file" accept="image/*" onChange={handleImageChange} />

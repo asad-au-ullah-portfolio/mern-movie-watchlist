@@ -2,7 +2,7 @@ function MovieCard({ movie, onToggle, onDelete }) {
     return (
         <div className="movie-card">
 
-      // Show Cloudinary poster or a placeholder
+      {/* Show Cloudinary poster or a placeholder */}
             {movie.posterUrl ? (
                 <img src={movie.posterUrl} alt={movie.title} className="poster" />
             ) : (
