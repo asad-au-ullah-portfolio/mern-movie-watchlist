@@ -4,21 +4,23 @@ import MovieForm from './components/MovieForm';
 import MovieGrid from './components/MovieGrid';
 import './App.css';
 
-const API = import.meta.env.VITE_API_URL || '/api/movies';
+const BASE_URL = import.meta.env.VITE_API_URL || '';
+
+const API = `${BASE_URL}/api/movies`;
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [filter, setFilter] = useState('all'); // 'all' | 'watched' | 'unwatched'
 
-  
+
   const fetchMovies = async () => {
     const res = await axios.get(API);
     setMovies(res.data);
   };
-  
+
   useEffect(() => { fetchMovies(); }, []);
-  
+
   const addMovie = async (movieData) => {
     const res = await axios.post(API, movieData);
     setMovies([res.data, ...movies]);
