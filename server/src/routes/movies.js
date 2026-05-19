@@ -1,6 +1,6 @@
 import express from 'express';
 import Movie from '../models/Movie.js'; // Added .js extension
-import { cloudinary } from '../config/cloudinary.js'; // Added .js extension
+import { cloudinary } from '../../config/cloudinary.js'; // Added .js extension
 
 const router = express.Router();
 

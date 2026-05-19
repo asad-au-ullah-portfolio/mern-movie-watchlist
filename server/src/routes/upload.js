@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { storage, cloudinary } from '../config/cloudinary.js'; // Added .js extension
+import { storage, cloudinary } from '../../config/cloudinary.js'; // Added .js extension
 
 const router = express.Router();
 
