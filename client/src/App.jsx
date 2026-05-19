@@ -4,7 +4,7 @@ import MovieForm from './components/MovieForm';
 import MovieGrid from './components/MovieGrid';
 import './App.css';
 
-const API = '/api/movies';
+const API = import.meta.env.VITE_API_URL || '/api/movies';
 
 function App() {
   const [movies, setMovies] = useState([]);
