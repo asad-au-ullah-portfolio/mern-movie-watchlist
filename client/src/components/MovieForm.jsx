@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL || '';
+
+const API = `${BASE_URL}/api/upload`;
+
 function MovieForm({ onAdd, onClose }) {
     const [formData, setFormData] = useState({
         title: '', genre: 'Action', releaseYear: '',
@@ -36,7 +40,7 @@ function MovieForm({ onAdd, onClose }) {
             const data = new FormData();
             data.append('poster', imageFile);  // 'poster' must match upload route
 
-            const uploadRes = await axios.post('/api/upload', data, {
+            const uploadRes = await axios.post(API, data, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             posterUrl = uploadRes.data.url;
